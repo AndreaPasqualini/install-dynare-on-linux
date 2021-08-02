@@ -2,12 +2,22 @@
 
 This repository contains a small Bash script that downloads, unpacks, configures and compiles an installation of Dynare on a Linux machine with MATLAB installed.
 
+
+## Requirements
+
+- A Debian-based machine. This script should work on Debian 10, Ubuntu 20.04 and Ubuntu 18.04, but has only been tested on Ubuntu 20.04.
+- A working installation of MATLAB.
+
+
+## Description
+
 The script will ask the following information:
 - Dynare version: Can be verified by going to https://www.dynare.org/release/source/. For example, `4.5.7`.
 - Path to MATLAB: Can be verified by executing `matlabroot` in the MATLAB prompt. For example, `/usr/local/MATLAB/R2020b`.
 - MATLAB version: Can be verified by executing `version` in the MATLAB prompt. For example, `9.9`.
 
 The script performs the following actions:
+- It ensures that the Debian-based machine on which this runs provides all the necessary dependencies.
 - It downloads a `.tar.xz` from https://www.dynare.org/release/source/, depending on the Dynare version requested.
 - It unpacks the downloaded tarball into `$HOME/.dynare/x.y.z`, where `x.y.z` is the Dynare version requested.
 - It runs the `./configure` command with appropriate flags. In particular, it suppresses debugging information from being displayed, it specifies not to use Octave and it provides the relevant MATLAB information.
@@ -18,6 +28,16 @@ The script does NOT perform the following:
 - Compile an Octave-compatible version of Dynare.
 - Run the test suite to verify that everything is in order after compilation.
 - Provide any insurance or warranty about the product that is eventually installed on your machine.
+
+
+## Removal, if necessary
+
+This script only leaves traces in `$HOME/.dynare/`.
+To remove any trace left from this script, simply run
+```shell
+rm -rf ~/.dynare/x.y.z
+```
+where `x.y.z` is the Dynare version you have installed.
 
 
 ## Potential improvements to implement
