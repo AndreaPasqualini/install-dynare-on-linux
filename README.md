@@ -1,6 +1,6 @@
 # Install Dynare on Linux
 
-This repository contains a small Bash script that downloads, unpacks, configures and compiles an installation of Dynare on a Linux machine with MATLAB installed.
+This repository contains a small Bash script that downloads, unpacks, configures and compiles an installation of [Dynare](https://www.dynare.org/) on a Debian-based Linux machine with [MATLAB](https://www.mathworks.com/products/matlab.html) installed.
 
 
 ## Requirements
@@ -57,12 +57,15 @@ where `x.y.z` is the Dynare version you have installed.
     First, one could be asked the release number and not the version, as it is more straightforward to know the release.
     Second, there could be a default option to read the release information from the path of the MATLAB installation, as the default paths usually end with the release number.
     Addressing this requires hard-coding the map release-version into the script, which I am too lazy for.
+- Idk, Pull Requests welcome!
 
 
 ## Disclaimer
 
 As per the [License](./LICENSE), no warranty is provided about the reliability of the software in this repository.
 In particular, users of such software should not trust that the resulting Dynare installation is a working one.
+
+Dynare is free software, see the related [license file](https://git.dynare.org/Dynare/dynare/-/blob/master/license.txt).
 
 MATLAB is a trademark of _The Mathworks, Inc._
 Lawful use of MATLAB requires a license, which can be bought at https://www.mathworks.com/products/matlab.html.
