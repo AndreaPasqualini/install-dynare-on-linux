@@ -1,12 +1,17 @@
 # Install Dynare on Linux
 
-This repository contains a small Bash script that downloads, unpacks, configures and compiles an installation of [Dynare](https://www.dynare.org/) on a Debian-based Linux machine with [MATLAB](https://www.mathworks.com/products/matlab.html) installed.
+This repository contains a small, but verbose, Bash script that downloads, unpacks, configures and compiles an installation of [Dynare](https://www.dynare.org/) on a Debian-based Linux machine with [MATLAB](https://www.mathworks.com/products/matlab.html) installed.
 
 
 ## Requirements
 
-- A Debian-based machine. This script should work on Debian 10, Ubuntu 20.04 and Ubuntu 18.04, but has only been tested on Ubuntu 20.04.
 - A working installation of MATLAB.
+- A Debian-based machine.
+    | Should work on | Tested?            |
+    |----------------|:------------------:|
+    | Ubuntu 20.04   | :heavy_check_mark: |
+    | Ubuntu 18.04   | :question:         |
+    | Debian 10      | :question:         |
 
 
 ## Description
