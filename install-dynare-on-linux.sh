@@ -1,5 +1,34 @@
 #!/bin/bash
 
+# Ensure build dependencies are satisfied
+sudo apt install \
+build-essential \
+gfortran \
+liboctave-dev \
+libboost-graph-dev \
+libgsl-dev \
+libmatio-dev \
+libslicot-dev \
+libslicot-pic \
+libsuitesparse-dev \
+flex \
+bison \
+autoconf \
+automake \
+texlive \
+texlive-publishers \
+texlive-latex-extra \
+texlive-fonts-extra \
+texlive-latex-recommended \
+texlive-science \
+texlive-plain-generic \
+lmodern \
+python3-sphinx \
+latexmk \
+libjs-mathjax \
+doxygen \
+x13as
+
 # Define variables for later use
 download_dir=$HOME/.tmp
 install_dir=$HOME/.dynare
