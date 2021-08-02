@@ -26,6 +26,7 @@ The script performs the following actions:
 
 The script does NOT perform the following:
 - Compile an Octave-compatible version of Dynare.
+- Compile a local version of the documentation.
 - Run the test suite to verify that everything is in order after compilation.
 - Provide any insurance or warranty about the product that is eventually installed on your machine.
 
