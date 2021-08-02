@@ -78,7 +78,7 @@ echo ""
 
 # Configure build
 sleep 5s
-./configure --disable-octave --with-matlab=$matlab_path MATLAB_VERSION=$matlab_version CFLAGS="-O3" CXXFLAGS="-O3" MATLAB_MEX_CFLAGS="-O3" MATLAB_MEX_CXXFLAGS="-O3"
+./configure --disable-octave --disable-doc --with-matlab=$matlab_path MATLAB_VERSION=$matlab_version CFLAGS="-O3" CXXFLAGS="-O3" MATLAB_MEX_CFLAGS="-O3" MATLAB_MEX_CXXFLAGS="-O3"
 
 echo ""
 echo "Configuration is over. Feel free to check the lines above to verify that all is good."
