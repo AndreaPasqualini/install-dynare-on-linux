@@ -1,8 +1,10 @@
 #!/bin/bash
 
+# Define variables for later use
 download_dir=$HOME/.tmp
 install_dir=$HOME/.dynare
 
+# Ask what version of Dynare is desired
 echo ""
 echo "What Dynare version would you like to install?"
 echo "Enter X.Y.Z, where each XYZ is a non-negative integer."
@@ -12,6 +14,7 @@ echo -n "[Dynare version]: "
 read dynare_version
 file_name=dynare-$dynare_version.tar.xz
 
+# Ask where MATLAB is installed
 echo ""
 echo "I need to know where your MATLAB installation is located."
 echo "An example is '/usr/local/MATLAB/R2020b'"
@@ -19,6 +22,7 @@ echo "An example is '/usr/local/MATLAB/R2020b'"
 echo -n "[Path to MATLAB]: "
 read matlab_path
 
+# Ask what MATLAB version is installed
 echo ""
 echo "I need to know what MATLAB version you have."
 echo "To know which one it is, open MATLAB and run 'version', then pick the first two integers X.Y and type them here."
@@ -29,6 +33,7 @@ read matlab_version
 echo ""
 echo "Downloading Dynare source for version $dynare_version..."
 
+# Download and unpack the relevant tarball
 wget --quiet --show-progress https://www.dynare.org/release/source/$file_name
 mkdir $install_dir/$dynare_version/ -p
 tar xf ./$file_name --directory=$install_dir/$dynare_version
@@ -42,6 +47,7 @@ echo "I will proceed to configure the unpacked folder in 5 seconds".
 echo "There will be a lot of lines printed, which say what is available and what not."
 echo ""
 
+# Configure build
 sleep 5s
 ./configure --disable-octave --with-matlab=$matlab_path MATLAB_VERSION=$matlab_version CFLAGS="-O3" CXXFLAGS="-O3" MATLAB_MEX_CFLAGS="-O3" MATLAB_MEX_CXXFLAGS="-O3"
 
@@ -53,6 +59,7 @@ echo "There will be a lot of lines printed, mostly related to C/C++ deprecation 
 echo "If all goes well, you can safely ignore those lines."
 echo ""
 
+# Compile source into binaries
 sleep 5s
 make
 
@@ -63,8 +70,10 @@ echo ""
 
 cd -
 
+# Remove the downloaded tarball
 rm ./$file_name
 
+# Say goodbye
 echo ""
 echo "Done! Do not forget to run 'addpath(~/.dynare/$dynare_version/matlab)' in MATLAB to use Dynare."
 echo ""
