@@ -15,16 +15,7 @@ flex \
 bison \
 autoconf \
 automake \
-texlive \
-texlive-publishers \
-texlive-latex-extra \
-texlive-fonts-extra \
-texlive-latex-recommended \
-texlive-science \
-texlive-plain-generic \
-lmodern \
 python3-sphinx \
-latexmk \
 libjs-mathjax \
 doxygen \
 x13as
